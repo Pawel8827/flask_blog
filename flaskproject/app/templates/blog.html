@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}
+Nowy blog
+{% endblock %}
+{% block content %}
+
+<div class="blog-page"></div>
+<h1 class="blog-h1">Moje blogi</h1>
+    {% for blog in blogs %}
+    <div class="blog-title">
+        {{ blog.title }}
+    </div>
+    <div class="blog-content">
+        <div class="blog-photo">
+        <img src="/static/uploads/{{blog.name}}" alt="">
+        </div>
+        <div class="blog-tresc">
+        {{ blog.tresc }}
+        </div>
+    </div>
+    <div class="blog-date">
+       Utworzony: {{ '{:%H:%M %d/%m/%Y}'.format(blog.data_created) }} 
+        
+            <a href="/delete/{{ blog.id }}">Delate</a>
+        </div>
+    
+    {% endfor %}
+<script src="/static/main.js"></script>
+</div>
+
+{% endblock %}

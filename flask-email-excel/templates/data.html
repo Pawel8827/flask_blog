@@ -1,0 +1,75 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Excel {% endblock %}  
+{% import "bootstrap/utils.html" as utils %}
+
+<link rel="stylesheet" href="/static/test.css">
+{% block content %}
+
+        <div class=container>
+        <h1>Pliki </h1>
+        
+          
+        <table class="table" id="hide">
+          
+          
+            <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Adres email</th>
+                  <th scope="col">Temat</th>
+                  <th scope="col">Treść wiadomości</th>
+                  <th scope="col">Akcja</th>
+                  
+                </tr>
+              </thead> 
+              <form method="post" action="wszystko">
+              {% for id, email, temat, tresc in dane %}
+              
+              
+              
+            <tbody>
+              <tr><input type="hidden" name=id value="{{id}}">
+                <th>{{id}}</th>
+                <th><input type="email" id=email{{id}} name="email_addr" class="form-control" value="{{email}}"></th>
+                <th><input type="text" id=temat{{id}} class="form-control" name='temat_w' value="{{temat}}"></th>
+                <th><textarea class="form-control" id=tresc{{id}} name='tresc_w' value="{{tresc}}" aria-label="With textarea">{{tresc}}</textarea></th>
+                <th><input class="btn btn-primary"  id={{id}} name="test" onclick=myFunction(this.id) type="button" value="Wyslij"></th>
+              </tr>
+              
+            
+              </tbody>
+              
+                {% endfor %}
+                <div id=wszystko_btn>
+                <input type=submit name="wszystko" class="btn btn-primary btn-lg" value="Wyślij Wszystko">
+              </div>
+               
+              </form>
+        <table>
+          
+        <form method="post" id=form_send>
+          <div class=container id="hide_send" style="display: none">
+            <div class="jumbotron">
+              <a href="\excel">
+              <img width="50" height="50" 
+                src = "/static/arrow-left-square-fill.svg" alt="My Happy SVG">
+              </img></a>
+          <h2 class="display-4">Czy na pewno wysłać wiadmość</h2>
+          <input type="hidden" id="idii">
+          {{form.email.label}}
+          {{ form.email(class_="form-control") }}
+          {{form.tytul.label}}
+          {{ form.tytul(class_="form-control") }}
+          {{form.message.label}}
+          {{ form.message(class_="form-control") }}
+          <br>
+          {{form.submit(class_="btn btn-primary")}}
+
+          </div>
+        </div>
+        </form>
+   
+        </div>
+        
+        <script src="/static/main.js"></script>
+        {% endblock %}

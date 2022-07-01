@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} {{title}} {% endblock %} 
+
+
+{% block content %}
+
+        <body>
+            <div class=container id=sli>
+              <a class="btn btn-primary" href="/info">Informator</a>
+              <a class="btn btn-primary" href="{% url 'logo_list' %}">Nagłowek</a>
+              <a class="btn btn-primary" href="{% url 'slider_create' %}">Nowy slider</a>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Obrazek</th>
+            <th scope="col">Nazwa</th>
+            <th scope="col">Treść</th>
+            <th scope="col">Data wygaśniecia</th>
+            <th scope="col">Data utworzenia</th>
+            <th scope="col">Akcja</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for s in slid %}
+          <tr>
+            
+            <th scope="row">{{forloop.counter}}</th>
+            <td> {% if s.extension_file == 'jpg' or s.extension_file == 'png'  %}
+                <div><img src="/static/move/{{ s.Plik }}" class=image_list  alt="{{s.Nazwa}}" class="d-block w-100"></div>
+              {% elif s.extension_file == 'mp4' %}
+              <div ><video class="video_list "  muted controls>
+                  <source src="/static/move/{{s.Plik}}" type="video/{{s.extension_file}}">
+                </video>
+              </div>{% endif %}</td>
+
+            <td>{{s.Nazwa}}</td>
+            <td>{{s.Text|safe}}</td>
+            <th >{{s.Data_wygasniecia|date:"Y-m-d"}}</th>
+            <th >{{s.Data_Utworzenia|date:"Y-m-d" }}</th>
+            <th ><a class="btn btn-danger" href="{% url 'slider_delete' pk=s.id %}">Usuń</a>
+              <a class="btn btn-primary" href="{% url 'slider_update' pk=s.id %}">Edycja</a></th>
+          </tr>
+          {% endfor %}
+        </tbody>
+    </div>
+    <div class="nums"></div>
+      </table>
+   
+    </body>
+{% endblock %}
+

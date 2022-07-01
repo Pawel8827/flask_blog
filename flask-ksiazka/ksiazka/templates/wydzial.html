@@ -1,0 +1,98 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Spis  {% endblock %}  
+
+{% block content %}
+
+<div class="container">
+      <h1> Wydział info</h1>
+      <table class="table">
+          <tr>
+          <th>ID </th>
+          <th>Wydzial krótka nazwa </th>
+          <th>Wydzial pełna nazwa </th>
+          <th>Kolejność </th>
+          <th>Akcja </th>
+          </tr>
+          {% for wydzial in wydzialy %}
+          <tr>
+              <td> {{ wydzial.id }} </td>
+              <td> <a href="/info/wydzial/{{ wydzial.id }}">{{ wydzial.wydzial_krotko }}</td>
+              <td> {{ wydzial.wydzial_pelny }}</td>
+              <td> {{ wydzial.wydzial_kolej }}</td>
+              <td> <a href="/delete/wydzial/{{ wydzial.id }}">Delete</a>
+                <a href="/update/wydzial/{{ wydzial.id }}">Update</a>
+              </td>
+          </tr>
+          {% endfor %}
+      </table>
+</div>
+<div class="container">
+      <h1> Referat info</h1>
+      <table class="table">
+          <tr>
+          <th>ID </th>
+          <th>Referat krótka nazwa </th>
+          <th>Referat pełna nazwa </th>
+          <th>Kolejność </th>
+          <th>Akcja </th>
+          </tr>
+          {% for referat in referaty %}
+          <tr>
+              <td> {{ referat.id }} </td>
+              <td> <a href="/info/referat/{{ referat.id }}">{{ referat.referat_krotko }}</td>
+              <td> {{ referat.referat_pelny }}</td>
+              <td> {{ referat.referat_kolej }}</td>
+              <td> <a href="/delete/referat/{{ referat.id }}">Delete</a>
+                <a href="/update/referat/{{ referat.id }}">Update</a>
+              </td>
+          </tr>
+          {% endfor %}
+      </table>
+    </div>
+      <div class="container">   
+      <h1> User info</h1>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+          <th>ID </th>
+          <th>Imie </th>
+          <th>Nazwisko </th>
+          <th>Kolejność </th>
+          <th>Pokoj </th>
+          <th>Tel wew </th>
+          <th>Telefon </th>
+          <th>FAX </th>
+          <th>Stanowisko </th>
+          <th>Opis </th>
+          <th>Wydzial</th>
+          <th>Referat </th>
+          <th>Akcja </th>
+          </tr>
+        </thead>
+          {% for urzednik in urzedniki %}
+          <tbody>
+          <tr>
+              <td> {{ urzednik.id }} </td>
+              <td> {{ urzednik.imie }}</td>
+              <td> {{ urzednik.nazwisko }}</td>
+              <td> {{ urzednik.user_kolej }}</td>
+              <td> {{ urzednik.pokoj }}</td>
+              <td> {{ urzednik.tel_wew }}</td>
+              <td> {{ urzednik.telefon }}</td>
+              <td> {{ urzednik.fax }}</td>
+              <td> {{ urzednik.stanowisko }}</td>
+              <td> {{ urzednik.opis }}</td>
+              <td> {{ urzednik.wydzial_pelny}}</td>
+              <td> {{ urzednik.referat_pelny }}</td>
+              <td> <a href="/delete/urzednik/{{ urzednik.id }}">Delete</a>
+                <a href="/update/urzednik/{{ urzednik.id }}">Update</a>
+              </td>
+              
+          </tr>
+        </tbody>
+          {% endfor %}
+      </table>
+      </div>
+      {% endblock %}

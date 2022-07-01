@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} {{title}} {% endblock %}
+
+{% block content %}
+
+<body>
+    
+    <div class=container>
+      <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+          <h1 class="display-4">{{title}}</h1>
+        </div>
+      </div>
+
+      <form method="POST"  enctype="multipart/form-data" class="post-form" action="">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Zapisz" />
+    </form>
+       
+    </div>
+         
+</body>
+
+{% endblock %}

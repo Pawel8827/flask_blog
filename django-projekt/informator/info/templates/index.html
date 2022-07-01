@@ -1,0 +1,50 @@
+
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} Informator {% endblock %}
+{% block head %}
+{% load mathfilters %}
+{% endblock %}
+{% block content %}
+<body>
+  <div class="w-auto h-auto p-3">
+  {% include 'logo.html' %}
+</div>
+    
+      
+    <div class="container-fluid">
+       
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner">
+            {% for s in slid %}
+           
+            
+            {% if s.extension_file == 'jpg' or s.extension_file == 'png'  %}
+            <div  id="{{forloop.counter}}" class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" data-interval="{{s.Czas_wyswietalnia|mul:1000}}">
+            <img src="/static/move/{{ s.Plik }}"  class=image alt="{{s.Nazwa}}" class="d-block w-100">
+          </div>
+          {% elif s.extension_file == 'mp4' or s.extension_file == 'avi' %}
+          
+          <div id="{{forloop.counter}}"  class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" data-interval="{{s.Czas_wyswietalnia|mul:1000}}">
+            <video  class=video  autoplay muted controls>
+              <source src="/static/move/{{s.Plik}}" type="video/{{s.extension_file}}">
+            </video>
+            <div class=text>{{s.Text|safe}}</div>
+        </div>
+        {% else %}
+        <div id="{{forloop.counter}}"  class="carousel-item {% if forloop.counter == 1 %}active{% endif %}" data-interval="{{s.Czas_wyswietalnia|mul:1000}}">
+          
+          <div class=text>{{s.Text|safe}}</div>
+      </div>
+          {% endif %}
+          {% endfor %}
+       
+       
+        </div>
+       
+        <div class="nums"></div>
+        </body>
+    
+    
+       
+    {% endblock %}

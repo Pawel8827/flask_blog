@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{% block title %}
+Kontakt
+{% endblock %}
+    {% block content %}
+    <div class="wrapper">
+    <h1 class="kontakt"> Kontakt</h1>
+        <div class="column">
+            <img src="/static\images\logo.png" alt="">
+        </div>
+      
+        <div class="column">
+        <form class="kontakt-form" method="POST" action="/echo">
+        <label>Imię i nazwisko</label>
+        <br>
+        {{ form.csrf_token }}
+        {{ form.name(class_='form-fild') }}
+        <br>
+        <label>Email</label>
+        <br>
+        {{ form.email(class_='form-fild') }}
+        <br>
+        <label>Twoja wiadomość </label>
+        <br>
+         {{ form.message }}
+         <br>
+        {{ form.submit(class_='form-button') }}
+        </form>
+        </div>
+       
+</div>
+<script src="/static/main.js"></script>
+{% endblock %}

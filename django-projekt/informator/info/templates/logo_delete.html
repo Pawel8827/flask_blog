@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %} Informator {% endblock %}
+
+{% block content %}
+<div class=container>
+    <form method="post" action="" enctype="multipart/form-data" class="post-form">{% csrf_token %}
+      <h3>Czy na pewno chcesz usunąc: {{ object.dzielnica|safe }}</h3>
+      <div class="form-group">
+      <input type="submit" class="btn btn-danger" value="Usuń">
+    <a class="btn btn-primary" href="{% url 'logo_list' %}">Powrót</a>
+</div>
+  </form>
+     
+  </div>
+
+
+
+{% endblock %}

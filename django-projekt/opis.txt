@@ -1,0 +1,65 @@
+uruchamiamy cmd jako administrator, po wpisaniu  cd c:\user\pgrabowski\desktop  
+
+1 Sprawdzamy czy jest zainstalowany python:
+	python --version
+
+2 Sprawdzamy czy jest zainstlowany pip:
+	pip --version
+
+3 Instalujemy virualenv (virtualne środowisko):
+	pip install virtualenv
+
+4 Sprawdzamy czy jest zainstlowane virtualenv 
+	virtualenv --version
+
+5 Tworzymy virtualenv np na pulpicie 
+	virtualenv env (env to nazwa możemy wpisać dowolna)
+
+6 Uruchamiamy nasze virtualenv które się nazywa env
+	env\scripts\activate
+	po poprawnym uruchmieniu jest (env) przed linią komend
+	deactivate - gdy chcemy wyjść z naszego virtualenv
+	
+7 Instalujemy framework django 
+	pip install django
+
+8 Tworzymy nowy projekt w moim przypadku na pulpicie (env) c:\user\pgrabowski\desktop 
+	django-admin startprojekt (startprojekt to nazwa może być dowolna)
+	 
+
+9 Zalecam folder env przeniesć do startprojekt
+
+10 Po wpisaniu cd startproject możemy uruchomić serwer. 
+
+11 Uruchamiamy serwer
+	python manage.py runserver
+12 Po uruchommieniu mamy na http://127.0.0.1:8000 naszą stronę w django. 
+
+###########################################################################################################################################################
+Przy połczeniu z reactem instalujemy cors, odblokowuje udostepnienie adresu django http://127.0.0.1:8000 dla reacta 
+Oprócz instalacji musimy dodać jeszcze cors do zainsalowanych aplikacji w django szczegóły: https://pypi.org/project/django-cors-headers/
+
+ 	python -m pip install django-cors-headers    
+
+############################################################################################################################################################
+
+React
+
+Musimy mieć zainstalowany note.js https://nodejs.org/en/
+
+1 Tworzymy nowy projekt w react.
+	npx create-react-app demo-app  (demo-app to nazwa nowego projektu w react)
+
+
+2 Tworzymy  react-router-dom ruting dla reacta
+	npm install react-router-dom  
+
+
+3 Uruchamiamy reacta jak jesteśmy w katalogu demo-app to:
+	npm start 
+
+
+	
+
+
+

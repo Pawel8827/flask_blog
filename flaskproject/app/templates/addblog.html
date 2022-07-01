@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+Nowy blog
+{% endblock %}
+{% block content %}
+
+<div class="formwrapper">
+    <h2 class="title">Blog wpisz</h2>
+    <form  class ="blog-form" method="POST" action="/addblog" enctype="multipart/form-data">
+        
+    <label class="blog-label">Tytuł </label>
+     {{ forma.title }} 
+     <label class="blog-label">Treść </label>
+      {{ forma.tresc }} 
+      <label class="blog-label">Umiesć zdjęcie </label>
+      <input type="file" name="photo">
+     {{ forma.submita }} 
+    </form>
+</div>
+<script src="/static/main.js"></script>
+
+<div class="blog">
+    
+
+</div>
+{% endblock %}

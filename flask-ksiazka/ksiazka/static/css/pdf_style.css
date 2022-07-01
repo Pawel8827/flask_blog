@@ -1,0 +1,66 @@
+@font-face {
+    src: url(fonts/SegoePrint.ttf);
+    font-family: print;
+    }
+* {
+    
+    margin: 0;
+    padding: 0;
+    font: 10px;
+    color: #000;
+}
+.row h1 {
+    font-size: 60px;
+}
+.row h3 {
+    background: #2A9448;
+    border-radius: 15px;
+}
+.row h4 p {
+    text-decoration: underline;
+    margin-top: 10px;
+}
+.row h1, h2, h3, h4{  
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+.row h2 {
+    font-size: 50px;
+    font-style: oblique;
+}
+.container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+#referat {
+    margin-top: 10px;
+    text-align: center;
+    background: #98CE93;
+    border-radius: 15px;
+}
+#dane_osobowe {
+    background: #AAE8A5;
+    border-radius: 15px;
+}
+
+.col-xs-1 {
+    flex: 0 0 7.33333%;
+    max-width: 7.33333%; } 
+
+
+.col-xs-2 {
+    flex: 0 0 14.66667%;
+    max-width: 14.66667%; } 
+
+
+.col-xs-3 {
+    flex: 0 0 20%;
+    max-width: 20%; } 
+
+.col-xs-4 {
+    flex: 0 0 25.33333%;
+    max-width: 25.33333%; } 
+

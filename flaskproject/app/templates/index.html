@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+Moja strona
+{% endblock %}
+{% block content %}
+    <div class="header-container">
+        <div class="wrapper">
+            <header>
+                <div class="hero">
+                    <h1>Cześć jestem <br> Magda :)</h1>
+                    <p>
+                        Witam cię na moim blogu.
+                    </p>
+                    <a href="{{ url_for('kontakt') }}">
+                        Kontakt
+                    </a>
+                </div>
+                <div class="hero-image">
+                    <img src="/static/images/foto.png" alt="">
+                    <div class="foto-bg"></div>
+                </div>
+            </header>
+
+            <div class="social-iscons">
+                <img src="/static/images/facebook.png" alt="">
+                <img src="/static/images/youtube.png" alt="">
+                <img src="/static/images/instagram.png" alt="">
+                
+
+            </div>
+        </div>
+    </div>
+    <script src="/static/main.js"></script>
+</body>
+{% endblock %}

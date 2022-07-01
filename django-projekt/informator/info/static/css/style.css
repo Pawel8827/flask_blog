@@ -1,0 +1,50 @@
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+ }
+ 
+ body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+ }
+.logo {
+    display: flex;
+}
+.opis { font-weight: bold;
+    
+    
+}
+.napis1 {
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: red;
+}
+.napis2 {
+    font-size: 40px;
+    display: flex;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color: red;
+}
+.image, .video {
+    height: 700px;
+    display: block;
+    max-width: 1200px;
+    
+}
+.video_list, .image_list {
+    height: 80px;
+    
+}
+
+ .carousel-item.active { 
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+    
+ }

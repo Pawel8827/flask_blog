@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>{% block title%} {% endblock %}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    
+    <div class="search-box">
+        <form  class ="blog-form"  method="POST" action="/blog">
+        <input type="text" placeholder="Wyszukaj tutaj" name="search">
+        <button class="btn-search">Wyszukaj</button>
+        </form>
+    </div>
+
+    <div class="nav_container">
+    <div class="wrapper">
+        <nav>
+        <div class="logo">MG.</div>
+            <ul class="nav-items">
+                <li><a href="{{ url_for('blog') }}">blog</a></li>
+                <li><a href="{{ url_for('kontakt') }}">kontakt</a></li>
+                <li><a href="{{ url_for('index') }}">o mnie</a></li>
+                <li>
+                    <a class="nav-btn-container" href="#">
+                        <img class="search-btn" src="/static/images/search.png" alt="">
+                        <img class="close-btn" src="/static/images/close.png" alt="">
+                    </a>
+                </li>
+            </ul>  
+        </nav>
+    </div>
+    </div>
+
+</head>
+<body>
+   {% block content %}
+   {% endblock %}
+</body> 
+<html>

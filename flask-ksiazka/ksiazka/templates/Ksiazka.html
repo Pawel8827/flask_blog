@@ -1,0 +1,73 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} Książka telefoniczna {% endblock %}  
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" type="text/css"
+      href="{{url_for('static', filename='css/style.css')}}">
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"><h1>Urząd m. st. Warszawy <br>Dzielnica Białołęka</h1></div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"><img src="{{url_for('static', filename='images/syrenka.png')}}"></div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"><h2>SPIS TELEFONÓW</h2></div>
+        <div class="col-sm-3"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6"><h4>Wszelkie zmiany w spisie telefonów prosimy zgłaszać <br>
+            drogą elektroniczną na adres: <br><p>bialoleka.wod@um.warszawa.pl</p></h4></div>
+        <div class="col-sm-3"></div>
+    </div>
+    
+</div>
+    <div class="container">
+        {% for wydzial in wydzialy %}
+        <div class="row">
+            <h3>{{ wydzial.wydzial_pelny }} {{ wydzial.wydzial_krotko }}</h3>
+        </div>
+        <div class="row">
+            <div class="col-xs-1">Pokój</div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-2">Tel. wewnetrzny</div>
+            <div class="col-xs-2">Tel. bezposredni</div>
+        </div>
+        {% for referat in referaty %}
+        {% if referat.referat_pelny != 'BRAK' %}
+        {% if referat.wydzial_id == wydzial.id %}
+        <div class="row"> 
+            <div id="referat">{{ referat.referat_pelny }} {{ referat.referat_krotko }}</div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% for urzednik in urzedniki %}
+        {% if referat.id == urzednik.referat_id %}
+        {% if wydzial.id == urzednik.wydzial_id %}
+        
+        <div class="row" id='dane_osobowe'>
+            <div class="col-xs-1">{{ urzednik.pokoj }}</div>
+            <div class="col-xs-4">{{ urzednik.opis }}</div>
+            <div class="col-xs-3">{{ urzednik.imie }} {{ urzednik.nazwisko }}</div>
+            <div class="col-xs-2"> {{ urzednik.tel_wew }}</div>
+            <div class="col-xs-2">{{ urzednik.telefon }}</div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+        {% endfor %}
+
+
+{% endblock %}

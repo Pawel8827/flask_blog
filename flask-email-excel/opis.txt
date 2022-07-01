@@ -1,0 +1,27 @@
+uruchamiamy cmd jako administrator, po wpisaniu  cd c:\user\pgrabowski\desktop  
+
+1 Sprawdzamy czy jest zainstalowany python:
+	python --version
+
+2 Sprawdzamy czy jest zainstlowany pip:
+	pip --version
+
+3 Instalujemy virualenv (virtualne środowisko):
+	pip install virtualenv
+
+4 Sprawdzamy czy jest zainstlowane virtualenv 
+	virtualenv --version
+
+5 Tworzymy virtualenv np na pulpicie 
+	virtualenv env (env to nazwa możemy wpisać dowolna)
+
+6 Uruchamiamy nasze virtualenv które się nazywa env
+	env\scripts\activate
+	po poprawnym uruchmieniu jest (env) przed linią komend
+	deactivate - gdy chcemy wyjść z naszego virtualenv
+	
+7 Instalujemy wszystkie programy 
+	pip install -r requirements.txt
+
+
+

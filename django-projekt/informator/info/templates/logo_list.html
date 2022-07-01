@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="container-fluid">
+    {% for i in nag %}
+     <button class="btn">{{i.id}}</button><button class="btn">{{i.wielkosc}}</button>
+    {%  if  i.wielkosc == "XL" %}
+
+    
+    <div class="jumbotron jumbotron-fluid" style="padding-top: 50px; background-color: {{ i.Kolor }};
+    padding-bottom:50px;">
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <img  class=logo src="/static/img/logo/{{ i.logo }}" height="170" width="240" alt="">
+  </div>
+<div class="col-md-9">
+<h1  class="display-4">{{i.dzielnica  | safe}}</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7"></div>
+<div  class="col-md-5" id=imieniny>
+
+</div>
+
+</div>
+<a class="btn btn-danger" href="{% url 'logo_delete' pk=i.id %}">Usuń</a>
+<a class="btn btn-primary" href="{% url 'logo_update' pk=i.id %}">Edycja</a>
+<a class="btn btn-primary" href="{% url 'slider_list' %}">Powrót</a>
+</div>
+
+    {% elif i.wielkosc == "L" %}
+    
+    <div class="jumbotron jumbotron-fluid" style="padding-top: 30px; background-color: {{ i.Kolor }};
+    padding-bottom:30px;" >
+
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <img  class=logo src="/static/img/logo/{{ i.logo }}"  height="170" width="240" alt="">
+  </div>
+<div class="col-md-9">
+<h1  class="display-4">{{i.dzielnica  | safe}}</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7"></div>
+<div  class="col-md-5" id=imieniny>
+</div>
+</div>
+<a class="btn btn-danger" href="{% url 'logo_delete' pk=i.id %}">Usuń</a>
+<a class="btn btn-primary" href="{% url 'logo_update' pk=i.id %}">Edycja</a>
+<a class="btn btn-primary" href="{% url 'slider_list' %}">Powrót</a>
+
+</div>
+
+
+    {% elif i.wielkosc == "M" %}
+    
+    <div class="jumbotron jumbotron-fluid" style="padding-top: 20px; background-color: {{ i.Kolor }};
+    padding-bottom:20px;">
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <img  class=logo src="/static/img/logo/{{ i.logo }}" height="170" width="240" alt="">
+  </div>
+<div class="col-md-9">
+<h1  class="display-4">{{i.dzielnica  | safe}}</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7"></div>
+<div  class="col-md-5" id=imieniny>
+
+
+</div>
+</div>
+</div>
+<a class="btn btn-danger" href="{% url 'logo_delete' pk=i.id %}">Usuń</a>
+<a class="btn btn-primary" href="{% url 'logo_update' pk=i.id %}">Edycja</a>
+<a class="btn btn-primary" href="{% url 'slider_list' %}">Powrót</a>
+
+    {% elif i.wielkosc == "S" %}
+    
+    <div class="jumbotron jumbotron-fluid" style="padding-top: 10px; background-color: {{ i.Kolor }};
+    padding-bottom:10px;">
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <img  class=logo src="/static/img/logo/{{ i.logo }}" height="170" width="240" alt="">
+  </div>
+<div class="col-md-9">
+<h1  class="display-4">{{i.dzielnica  | safe}}</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7"></div>
+<div  class="col-md-5" id=imieniny>
+</div>
+</div>
+</div>
+<a class="btn btn-danger" href="{% url 'logo_delete' pk=i.id %}">Usuń</a>
+<a class="btn btn-primary" href="{% url 'logo_update' pk=i.id %}">Edycja</a>
+<a class="btn btn-primary" href="{% url 'slider_list' %}">Powrót</a>
+
+
+    {% elif i.wielkosc == "XS" %}
+    
+    <div class="jumbotron jumbotron-fluid" style="padding-top: 0px; background-color: {{ i.Kolor }};
+    padding-bottom:0px;">
+
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-2">
+  <img  class=logo src="/static/img/logo/{{ i.logo }}" height="170" width="240" alt="">
+  </div>
+<div class="col-md-9">
+<h1  class="display-4">{{i.dzielnica  | safe}}</h1>
+</div>
+</div>
+<div class="row">
+<div class="col-md-7"></div>
+<div  class="col-md-5" id=imieniny>
+</div>
+</div>
+
+</div>
+<a class="btn btn-danger" href="{% url 'logo_delete' pk=i.id %}">Usuń</a>
+<a class="btn btn-primary" href="{% url 'logo_update' pk=i.id %}">Edycja</a>
+<a class="btn btn-primary" href="{% url 'slider_list' %}">Powrót</a>
+
+
+    {% endif%}
+    {% endfor %}
+</div>
+</body>
+{% endblock %}

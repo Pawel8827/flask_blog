@@ -1,0 +1,21 @@
+{% load static %} 
+<html lang="en">
+
+    <title>{% block title %}{% endblock %}</title>
+    
+<meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <link rel="stylesheet" href="{% static 'boot/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <script src="{% static 'boot/js/jquery.js' %}"> </script>
+    
+    <script src="{% static 'boot/js/bootstrap.min.js' %}"></script>
+
+
+<body>
+    {% block content %}
+    {% endblock %}
+</body>
+<script src="{% static 'mainn.js' %}"> </script>
+</html>

@@ -1,0 +1,403 @@
+* 
+{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Segoe Print;
+}
+
+body
+{
+    font-family: 'Times New Roman', Times, serif;
+    width: auto;
+    
+}
+
+.nav_container 
+{
+    background: yellow;
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.1);
+    height: 72px;
+    width: 100%;
+    margin-top: -50px;
+    z-index: 500;
+    position: relative;
+}
+.wrapper 
+{
+    width: 1200px;
+    margin: 0 auto;
+}
+nav
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+nav ul 
+{
+    display: flex;
+}
+nav .logo
+{
+    font-size: 64px;
+    font-weight: 800;
+}
+.nav-items li 
+{   
+    list-style: none;
+    margin-right: 90px;
+}
+.nav-items li a 
+{   
+    font-size: 24px;
+    text-decoration: none;
+}
+.search-box 
+{
+    width: 1200px;
+    margin: 0 auto;
+    text-align: right;
+    position: relative;
+    top: 0;
+    transition: 300ms;
+}
+.search-box.active 
+{
+    top: 72px;
+}
+.search-box input, .btn-search
+{
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+    border-radius: 0px 0px 8px 8px;
+    font-size: 20px;
+    line-height: 42px;
+    border: 0;
+    padding: 12px;
+}
+.btn-search:hover
+{
+    background: yellow;
+}
+.search-box input::placeholder
+{
+    color: black;
+}
+.nav-btn-container 
+{
+    display: flex;
+    position: relative;
+}
+.nav-btn-container img 
+{
+    position: absolute;
+}
+.nav-btn-container .close-btn
+{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: 300ms;
+}
+.nav-btn-container .search-btn
+{   
+    pointer-events: auto;
+    transition: 300ms;
+}
+.nav-btn-container.active .search-btn 
+{
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-8px);
+}
+.nav-btn-container.active .close-btn
+{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.search-btn, .close-btn
+{
+    width: 30px;
+}
+.header-container
+{
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    background: white;
+    background-position: right;
+    background-size: contain;
+}
+header 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1 
+{
+    font-weight: 800;
+    font-size: 3.5vw;
+    line-height: 75px;
+    margin-bottom: 64px;
+    width: 100%;
+    
+}
+header p
+{
+    font-size: 2vw;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+header a 
+{
+    font-size: 1vw;
+    text-decoration: none;
+    background: yellow;
+    border-radius: 10px;
+    padding: 5px 35px;
+    margin-left: 40%;  
+    display: inline-block;
+    transition: 300ms;
+}
+header a:hover
+{
+    transform: translateY(-8px);
+}
+header .hero-image 
+{
+    position: relative;
+}
+header .hero-image img
+{
+    width: 100%;
+    border-radius: 50% 30%;
+    transform: 300 ms;
+    position: relative;
+    z-index: 100;
+}
+header .hero-image img:hover
+{
+    transform: rotate(-6deg);
+}
+header .hero-image .foto-bg
+{
+    position: absolute;
+    border-radius: 50% 30%;
+    width: 480px;
+    height: 492px;
+    left: 5px;
+    top: 2px;
+
+    background: #44A1A0;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+
+}
+.hero a 
+{
+    line-height: 52px;
+    text-decoration: none;
+}
+.social-iscons
+{
+    border-top: 20%;
+}
+.social-iscons img
+{
+    width: 5%;
+    border: 50px;
+}
+@media only screen and (max-width: 955px)
+{
+    .nav-items 
+    {
+        margin-right: 0;
+
+    }
+    .nav-items li a 
+    {
+        font-size: 90%;
+        text-decoration: none;
+    }
+    .wrapper 
+    {
+        width: 100%;
+        margin: 0 auto;
+    }
+    nav
+    {
+        align-items: auto;
+        height: 72px;
+    }
+    nav .logo
+    {
+        font-size: 45px;
+        font-weight: 800;
+    }
+}
+@media only screen and (max-width: 690px)
+{
+    nav
+    {
+        display: block;
+        align-items: left;
+        justify-content: space-between;
+        height: 72px;
+    }
+    header .hero-image 
+    {
+        position: relative;
+        width: 50%;
+    }
+    header .hero-image img
+    {
+        width: 100%;
+        border-radius: 50% 30%;
+        transform: 300 ms;
+        position: relative;
+        z-index: 100;
+    }
+    header .hero-image img:hover
+    {
+        transform: rotate(-6deg);
+    }
+    header .hero-image .foto-bg
+    {
+        position: absolute;
+        border-radius: 50% 30%;
+        width: 98%;
+        height: 96%;
+        left: 5px;
+        top: 2px;
+
+    }
+}
+
+
+.kontakt {
+    margin-top: 30px;
+    font-size: 500%;
+    text-align: right;
+    width: 65%;
+     
+}
+.column img {
+    float: left;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50% 30%;
+      
+}
+.column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 10px;
+}
+.kontakt-form {
+    padding: 12px;
+    display: block;
+    margin-top: 50px;
+    
+  }
+input[type=submit] {
+    width: 25%;
+    height: 40px;
+    float: left;
+    background-color: #F29595;
+    color: white;
+    border-radius: 5px;
+}
+input[type=submit]:hover {
+    background-color: black;
+}
+.form-button
+{
+    margin-left: 10%;
+}
+.kontakt-form label ,.form-fild, .kontakt-form textarea
+{
+    font-size: 100%;
+    width: 100%;
+    margin-left: 10%;
+    
+}
+.kontakt-form textarea 
+{
+    height: 150px;
+}
+.kontakt-form label
+{
+    padding: 10px
+}
+
+.formwrapper
+{
+    margin-top: 20px;
+    margin-left: 20%;
+    height: 450px;
+    width: 50%;
+    border-style: dotted;
+    text-align: center;
+    margin-top: 80px;
+}
+.formwrapper h2
+{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#title, #tresc, #photo
+{
+    width: 80%;  
+    display: flex;
+    margin-left: 10%;
+}
+#submita
+{
+    margin-left: 38%;
+}
+#tresc
+{
+    height: 130px;
+}
+.blog-page
+{
+    margin-top: 50px;
+    
+}
+.blog-h1
+{
+    text-align: center;
+    font-size: 52px;
+    margin-bottom: 30px;
+}
+.blog-title
+{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.blog-content
+{
+   width: 1200px;
+    margin: 0 auto;
+    display:flex;
+    
+}
+.blog-photo img
+{   
+    width: 300px;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.blog-date
+{   
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,1 @@
+Adress IP: 10.148.5.0 to komputer 0204C012020219.bzmw.gov.pl, status operacji: Error occurred while copying file.

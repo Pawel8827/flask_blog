@@ -1,0 +1,6 @@
+Prettier
+ES7 React
+Auto Rename TAG
+Docker
+Git
+SQLite

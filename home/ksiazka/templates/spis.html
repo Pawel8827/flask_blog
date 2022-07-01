@@ -1,0 +1,18 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} {{ tytul }}{% endblock %}  
+
+{% block content %}
+
+<div class="container">
+<h1>{{ tytul }} </h1>
+</div>
+
+<div class="container">
+{% from 'bootstrap/form.html' import render_form %}
+
+{{ render_form(form) }}
+</div>
+
+      {% endblock %}
