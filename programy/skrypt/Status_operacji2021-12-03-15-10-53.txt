@@ -1,3 +1,0 @@
-Adress IP: 10.148.5.1 to komputer 0204C012016962.bzmw.gov.pl, status operacji: Error occurred while copying file.
-Adress IP: 10.148.5.2 to komputer 0204C012014857.bzmw.gov.pl, status operacji: Error occurred while copying file.
-Adress IP: 10.148.5.3 to komputer 0204C012019118.bzmw.gov.pl, status operacji: Error occurred while copying file.
